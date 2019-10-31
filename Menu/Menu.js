@@ -33,3 +33,17 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+let x = menuItems.map(items=>`<li>${items}</li>`).toString().replace(/,/g,'');
+
+document.querySelector('.header').innerHTML += `
+  <div class="menu">
+    <ul>
+      ${x}
+    </ul>
+  </div>
+    `;
+
+let menubtn = document.querySelector('.menu-button');
+let menu = document.querySelector('.menu');
+
+menubtn.addEventListener('click',() => menu.classList.toggle('menu--open'))
